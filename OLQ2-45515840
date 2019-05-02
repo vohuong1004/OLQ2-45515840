@@ -1,0 +1,30 @@
+
+(a) 
+Step 1 : Download the file from   http://www.staff.hs-mittweida.de/~wuenschi/data/media/compbiolbook/chapter-11-regex--structure.pdb
+Step 2 : Change the name of file into downloads is structure.pdb
+Step 3: Use scp command to upload structure.pdb to AWS account
+
+scp -i 45515840.pem structure.pdb ubuntu@ec2-52-63-147-126.ap-southeast-2.compute.amazonaws.com:
+Step 4: Change Beisel’s name to Weisel:
+Use command:  sed 's/Beisel/Weisel/' structure.pdb
+(b)	Delete the first three lines of the file:
+Use command: sed '1,3d' structure.pdb
+(c)Print only lines 5 through 10
+Use command:  sed -n '5,10p' structure.pdb
+(d) Delete lines containing the word MET
+Use command: sed '/MET/d' structure.pdb
+(e)	Print all lines where the HELIX line contains the word ILE:
+Use command:  sed -n '/HELIX.*ILE/p' structure.pdb
+(f)	Append three stars to the end of lines starting with “H”
+Use command:  sed '/^H/s/$/***/' structure.pdb
+(g)	Replace the line containing SEQRES with SEQ
+Use command:  sed '/SEQRES/s/^.*$/SEQ/' structure.pdb
+(h)	Download jabberwocky.txt into AWS account:
+Step 1 : Save file jabberwocky.txt from ilearn.
+Step 2 : Use scp command to upload jabberwocky into AWS account:
+
+scp -i 45515840.pem jabberwocky.txt ubuntu@ec2-52-63-147-126.ap-southeast-2.compute.amazonaws.com:
+
+(i)	Delete all blank lines of jabberwocky.txt:
+-  Use command:  sed '/^$/d' jabberwocky.txt 
+
