@@ -26,5 +26,5 @@ Step 2 : Use scp command to upload jabberwocky into AWS account:
 scp -i 45515840.pem jabberwocky.txt ubuntu@ec2-52-63-147-126.ap-southeast-2.compute.amazonaws.com:
 
 (i)	Delete all blank lines of jabberwocky.txt:
--  Use command:  sed '/^$/d' jabberwocky.txt 
+Use command:  sed '/^\s*$/d' jabberwocky.txt
 
